@@ -14,9 +14,18 @@
     pants: 5,
   }
 
+
+
 const sale = function (article, cant){
-  
-}
+  if(inventory[article] >= cant){
+    inventory[article] = inventory[article] - cant;
+    return 200;
+  }
+  else{
+    return 500;
+  } 
+};
+
 
 // TESTS (no modificar)
 console.log(sale('shoes',8) === 200 && inventory.shoes === 2);

@@ -3,7 +3,12 @@
 // si la longitud del array es < 3 se debe retornar undefined
 
 const greater3 = nums => {
-    
+    if(nums.length < 3){
+        return undefined;
+    }
+    let miArray = Array.from(new Set(nums));
+    miArray.sort((itemA, itemB) => itemA > itemB ? 1: -1);
+    return miArray[miArray.length - 3];  
 }
 
 
